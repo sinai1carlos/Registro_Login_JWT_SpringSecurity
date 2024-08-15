@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: SpringSecurityApp
+  #Database configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/securityDB
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  #Security configuration
+  #security:
+    #user:
+      #name: sinai1
+      #password: 1234
+  security:
+    jwt:
+      key:
+        private: 964ffdb5e95797ad2be8a036924d97a1df90a004b69e25093959be7d5104601b
+      user:
+        generator: AUTH0JWT-BACKEND
